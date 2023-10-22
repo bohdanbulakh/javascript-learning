@@ -24,4 +24,16 @@ const purchase = {
     ]
 };
 
-console.log(purchase);
+
+const find = (goods, name) => {
+    for (const goodsGroup in goods) {
+        for (const product of goods[goodsGroup]) {
+            if (product.name === name) {
+                return product;
+            }
+        }
+    }
+}
+
+const result = find(purchase, 'Juice');
+console.log(result);
