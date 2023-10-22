@@ -16,6 +16,7 @@ const purchase = {
         { name: 'Apples', price: 15 },
         { name: 'Juice', price: 20 },
         { name: 'Sausages', price: 40 },
+        { name: 'Bananas', price: 15 },
         { name: 'Cheese', price: 35 },
     ],
     Furniture: [
@@ -26,14 +27,18 @@ const purchase = {
 
 
 const find = (goods, name) => {
+    const result = [];
+
     for (const goodsGroup in goods) {
         for (const product of goods[goodsGroup]) {
             if (product.name === name) {
-                return product;
+                result.push(product);
             }
         }
     }
+
+    return result;
 }
 
-const result = find(purchase, 'Juice');
+const result = find(purchase, 'Bananas');
 console.log(result);
